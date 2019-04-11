@@ -9,4 +9,5 @@ const WebcamPermissions = ({allowPermissions}) => (
 );
 
 
+
 export default WebcamPermissions
