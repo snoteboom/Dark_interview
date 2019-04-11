@@ -1,37 +1,53 @@
 import React, { Component } from 'react';
 import '../styles/styles.scss';
 import Webcamview from './WebcamView.js'
+import ScreenshotList from '../elements/ScreenshotList'
+import ImageModal from '../elements/ImageModal'
 class WebcamContainer extends Component {
 
     constructor(props){
         super(props)
         this.state = {
-            screenshots: []
+            screenshots: [],
+            pause: false
         }
 
     }
 
-    updateScreenshots = (img) =>{
-        if(img){
+    updateScreenshots = (e) =>{
+        if(e){
+            //Need to make sure it adds the image to front of array(not back)
             var screenshots = [...this.state.screenshots]
-            screenshots.push(img)
+            //.push is wrong, fix this before turning in
+            screenshots.push(e)
             this.setState({
                 screenshots: screenshots
             })
         }
     }
 
+    enlargeImage = (e) => {
+        this.setState({
+            pause: true,
+            imgPreview: e
+        })
+    }
+
+    closeModal = () => {
+        this.setState({
+            pause: false,
+            imgPreview: null
+        })
+    }
+
     render() {
         return(
             <div className="Webcam-container">
-                <Webcamview updateScreenshots={this.updateScreenshots.bind(this)}/>
-                {this.state.screenshots.map((img, idx)=>{
-                    return <img className="screenshot"
-                                key={"img" +idx}
-                                src={`${img}`}
-                                alt={`screenshot number ${idx}`}
-                    />
-                })}
+                {this.state.pause && <ImageModal image={this.state.imgPreview} closeModal={this.closeModal}/>}
+                <Webcamview restart={this.props.restart} settings={this.props.values} updateScreenshots={this.updateScreenshots.bind(this)} pause={this.state.pause}/>
+                <h1>Your photos: </h1>
+                {this.state.screenshots.length > 0 && <ScreenshotList enlargeImage={this.enlargeImage.bind(this)} screenshots={this.state.screenshots}/>}
+
             </div>
         )
     }

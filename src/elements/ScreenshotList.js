@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ScreenshotView = ({screenshots}) =>{
+const ScreenshotView = ({screenshots, enlargeImage}) =>{
     return(
 
         <div className="screenshot-view">
@@ -9,6 +9,7 @@ const ScreenshotView = ({screenshots}) =>{
                             key={"img" +idx}
                             src={`${img}`}
                             alt={`screenshot number ${idx}`}
+                            onClick={()=>enlargeImage(img)}
                 />
             })}
         </div>
