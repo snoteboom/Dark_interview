@@ -9,7 +9,7 @@ class WebcamView extends Component {
     }
 
     componentDidMount() {
-        this.interval = setInterval(() => this.takeScreenShot(), 2000);
+        this.interval = setInterval(() => this.takeScreenShot(), 1000);
     }
 
     setRef = webcam => {
