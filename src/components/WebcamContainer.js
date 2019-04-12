@@ -16,9 +16,7 @@ class WebcamContainer extends Component {
 
     updateScreenshots = (e) =>{
         if(e){
-            //Need to make sure it adds the image to front of array(not back)
             var screenshots = [...this.state.screenshots]
-            //.push is wrong, fix this before turning in
             screenshots.unshift(e)
             this.setState({
                 screenshots: screenshots
