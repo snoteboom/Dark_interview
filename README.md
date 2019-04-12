@@ -10,7 +10,7 @@ To install the necessary dependencies run the following the the main directory:
 
 
 
-##Thought process:
+## Thought process:
 
 These are the steps/thought process I went through when building this app:
  
