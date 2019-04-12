@@ -25,7 +25,7 @@ class WebcamView extends Component {
             <div className="WebcamView">
                 <Webcam
                     audio={false}
-                    height={350}
+                    height={262}
                     ref={this.setRef}
                     screenshotFormat="image/jpeg"
                     width={350}
