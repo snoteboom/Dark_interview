@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './styles/styles.scss';
-import WebcamPermissions from './elements/WebcamPermissions'
 import WebcamView from './components/WebcamContainer'
 class App extends Component {
 

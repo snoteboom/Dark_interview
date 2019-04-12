@@ -14,7 +14,7 @@ class WebcamContainer extends Component {
     updateScreenshots = (img) =>{
         if(img){
             var screenshots = [...this.state.screenshots]
-            screenshots.push(img)
+            screenshots.unshift(img)
             this.setState({
                 screenshots: screenshots
             })
