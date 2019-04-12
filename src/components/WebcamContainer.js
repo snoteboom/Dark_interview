@@ -19,7 +19,7 @@ class WebcamContainer extends Component {
             //Need to make sure it adds the image to front of array(not back)
             var screenshots = [...this.state.screenshots]
             //.push is wrong, fix this before turning in
-            screenshots.push(e)
+            screenshots.unshift(e)
             this.setState({
                 screenshots: screenshots
             })
