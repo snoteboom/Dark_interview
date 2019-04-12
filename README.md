@@ -1,4 +1,5 @@
-##Welcome to Sydney's twist
+
+## Welcome to Sydney's twist
  
  While building the app in the master branch, i was inspired to create a simple "photoshoot app" by adding the following features: 
  
